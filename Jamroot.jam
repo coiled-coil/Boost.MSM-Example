@@ -1,0 +1,18 @@
+import testing ;
+import path ;
+import os ;
+import project ;
+
+local BOOST_ROOT = [ os.environ BOOST_ROOT ] ;
+use-project /boost : $(BOOST_ROOT) ;
+
+run msm_test01.cpp
+    :
+    :
+    :
+    <include>$(BOOST_ROOT)
+    <define>ANDROID_UNITTEST
+    <cxxflags>-fcolor-diagnostics
+    <library>/boost/test//boost_unit_test_framework
+    ;
+
