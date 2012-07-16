@@ -8,6 +8,9 @@
 //    Boost C++ Library
 //    http://www.boost.org/
 
+// This program is modified from $BOOST_ROOT/libs/msm/test/SimpleMachine.cpp,
+// so please see original source too.
+
 #include <iostream>
 #include <boost/msm/back/state_machine.hpp>
 #include <boost/msm/front/state_machine_def.hpp>
@@ -80,7 +83,7 @@ namespace
         {
         };
 
-        // the initial state of the player SM. Must be defined
+        // the initial state of the downloader SM. Must be defined
         typedef Uninitialized initial_state;
 
         // transition actions
@@ -93,7 +96,7 @@ namespace
 
         typedef downloader_ x; // makes transition table cleaner
 
-        // Transition table for player
+        // Transition table for downloader
         struct transition_table : mpl::vector<
             //    Start                  Event               Next              Action               Guard
             //  +--------------+---------------------+----------------+---------------------+----------------------+
